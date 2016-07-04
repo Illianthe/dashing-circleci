@@ -1,0 +1,31 @@
+<h1>CircleCI Details</h1>
+
+<div class="circleci-details">
+  <span class="label">Status</span>
+  <span data-bind="status.description"></span>
+</div>
+<div class="circleci-details">
+  <span class="label">Estimated Wait Time</span>
+  <span data-bind="friendly_ewt"></span>
+  <span class="aside" data-addclass-show="ewt_level | equals 'idle'">(Awesome!)</span>
+  <span class="aside" data-addclass-show="ewt_level | equals 'minor'">(Just a little bit longer...)</span>
+  <span class="aside" data-addclass-show="ewt_level | equals 'major'">(Ugh...)</span>
+  <span class="aside" data-addclass-show="ewt_level | equals 'critical'">('cause #%%! you, that's why)</span>
+</div>
+
+<h1>Recent Builds</h1>
+
+<div class="build" data-foreach-build="recent_builds" data-addclass-success="build.indicator | equals 'success'" data-addclass-failed="build.indicator | equals 'failed'">
+  <div class="details">
+    <div class="project-branch">
+      <span data-bind="build.project"></span>/<span data-bind="build.branch"></span>
+    </div>
+
+    <div class="author">
+      <span data-bind="build.last_committer_name"></span>
+      <<span data-bind="build.last_committer_email"></span>>
+    </div>
+  </div>
+
+  <div class="status" data-bind="build.friendly_status"></status>
+</div>

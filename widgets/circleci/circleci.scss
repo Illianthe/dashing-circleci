@@ -1,0 +1,75 @@
+.widget-circleci {
+  background-color: #3185BA;
+  padding: 50px;
+
+  h1 {
+    text-align: left;
+    margin-top: 50px;
+    text-transform: uppercase;
+  }
+
+  h1:first-child {
+    margin-top: 0;
+  }
+
+  .circleci-details {
+    font-size: .8em;
+    text-align: left;
+
+    .label {
+      font-weight: bold;
+    }
+
+    .label:after {
+      content: ': '
+    }
+
+    .aside {
+      display: none;
+
+      &.show {
+        display: inline;
+      }
+    }
+  }
+
+  .build {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #898989;
+
+    & + .build {
+      margin-top: 10px;
+    }
+
+    &.success {
+      background-color: #42c88a;
+    }
+
+    &.failed {
+      background-color: #ed5c5c;
+    }
+
+    .details {
+      flex: 1;
+      font-size: .8em;
+      text-align: left;
+    }
+
+    .project-branch {
+      font-weight: bold;
+    }
+
+    .author {
+      opacity: .8;
+    }
+
+    .status {
+      width: 125px;
+      text-transform: uppercase;
+    }
+  }
+}
